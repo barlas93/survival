@@ -1,10 +1,14 @@
-import streamlit as st
+from flask import Flask, render_template, request
+import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
 
+app = Flask(__name__)
+
 data = pd.read_csv('survival.csv')
+
 data = data.drop(columns=['Name'])
 data = data.dropna()
 
@@ -18,45 +22,50 @@ y = data['SURV1']
 oversample = RandomOverSampler(sampling_strategy='minority')
 X_resampled, y_resampled = oversample.fit_resample(X, y)
 
+
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)  
 rf_model.fit(X_resampled, y_resampled)
 
-def main():
-    st.title('Survival Prediction App')
+label_encoder_sex = LabelEncoder()
+label_encoder_diagnosis = LabelEncoder()
 
-    age = st.number_input('Age', min_value=0, max_value=100, step=1)
-    sex = st.selectbox('Sex', ['Male', 'Female'])
-    bmi = st.number_input('BMI', min_value=10.0, max_value=50.0, step=0.1)
-    diagnosis = st.selectbox('Diagnosis', ['Type A', 'Type B', 'Type C'])
-    location = st.selectbox('Location', ['Location A', 'Location B', 'Location C'])
-    resection = st.checkbox('Resection')
-    infection = st.checkbox('Infection')
-    ct = st.checkbox('CT')
-    rt = st.checkbox('RT')
-    revision = st.checkbox('Revision')
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-    if st.button('Predict'):
-        sex_encoded = label_encoder.transform([sex])[0]
-        diagnosis_encoded = label_encoder.transform([diagnosis])[0]
+@app.route('/predict', methods=['POST'])
+def predict():
+    age = request.form['age']
+    sex = request.form['sex']
+    bmi = request.form['bmi']
+    diagnosis = request.form['diagnosis']
+    location = request.form['location']
+    resection = request.form['resection']
+    infection = request.form['infection']
+    ct = request.form['ct']
+    rt = request.form['rt']
+    revision = request.form['revision']
+    
+    input_data = pd.DataFrame({
+        'Age': [age],
+        'Sex': [sex],
+        'BMI': [bmi],
+        'Diagnosis': [diagnosis],
+        'Location': [location],
+        'Resection': [resection],
+        'Infection': [infection],
+        'CT': [ct],
+        'RT': [rt],
+        'Revision': [revision]
+    })
 
-        input_data = pd.DataFrame({
-            'Age': [age],
-            'Sex': [sex_encoded],
-            'BMI': [bmi],
-            'Diagnosis': [diagnosis_encoded],
-            'Location': [location],
-            'Resection': [resection],
-            'Infection': [infection],
-            'CT': [ct],
-            'RT': [rt],
-            'Revision': [revision]
-        })
+    y_pred = rf_model.predict(input_data)
+    y_proba = rf_model.predict_proba(input_data)[:, 1]
 
-        y_pred = rf_model.predict(input_data)
-        y_proba = rf_model.predict_proba(input_data)[:, 1]
+    labels = {0: "Failure", 1: "Survival"}
+    y_pred_labels = [labels[pred] for pred in y_pred]
 
-        st.write('Prediction:', y_pred[0])
-        st.write('Probability:', y_proba[0])
+    return render_template('result.html', prediction=y_pred_labels[0], probability=y_proba[0])
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True)
