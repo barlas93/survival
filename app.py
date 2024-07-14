@@ -1,5 +1,4 @@
 import pandas as pd
-pip install scikit-learn
 from sklearn.preprocessing import LabelEncoder
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
