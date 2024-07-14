@@ -1,5 +1,6 @@
+pip install -r requirements.txt
+
 from flask import Flask, render_template, request
-import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from imblearn.over_sampling import RandomOverSampler
