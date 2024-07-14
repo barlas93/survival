@@ -1,0 +1,139 @@
+Name,Sex,Age,BMI,Diagnosis,Location,Resection,Revision,Infection,CT,RT,SURV1
+"Almazan, Jeovanny ",MALE,2,3,P,2,2,1,0,1,0,1
+"Young, Jonicia ",FEMALE,2,3,P,2,2,1,0,1,0,1
+"Connor, John ",MALE,3,4,P,2,4,1,0,1,0,1
+"Perez, Elizabeth",FEMALE,4,4,M,1,1,1,0,1,1,1
+"Holland, Ashley",FEMALE,2,4,P,2,1,1,0,1,0,0
+"Holland, Ashley",FEMALE,2,4,P,2,2,2,0,1,0,1
+"Agramonte, Francisca",FEMALE,4,4,M,1,1,1,0,1,1,1
+"Gallagher, Luke",MALE,1,2,P,2,2,1,0,1,0,1
+"Gallagher, Luke",MALE,1,2,P,2,2,2,0,1,0,1
+"Vega, Lillian",FEMALE,3,2,M,2,1,1,0,1,1,1
+"Gabbe, Crystal",FEMALE,1,1,P,2,1,2,0,1,0,1
+"Gabbe, Crystal",FEMALE,1,1,P,2,2,3,0,1,0,1
+"Shapiro, Batsheva",FEMALE,1,2,P,2,2,1,0,1,0,1
+"Williams, Collin",MALE,3,2,M,2,1,1,0,0,1,1
+"Nixon, Shannon",MALE,2,2,M,1,2,1,0,1,1,1
+"Pennington, Jermaine",MALE,2,4,P,2,3,1,0,1,0,1
+"Velez, Lillian",FEMALE,2,3,P,2,1,1,0,0,1,1
+"Marrero Figueroa, Andrea",FEMALE,4,3,M,2,1,1,0,1,1,1
+"Pichirilio, Ricardo",FEMALE,3,3,M,2,1,1,0,1,1,1
+"Rawlins, Dominic",MALE,3,4,M,2,1,1,0,0,0,1
+"Lopez, Mitchell",MALE,2,5,P,2,1,1,0,0,0,1
+"Stephenson, Barbara",FEMALE,3,3,M,2,1,1,0,0,1,1
+"Kassim, Jamel",MALE,2,2,P,2,2,1,0,1,0,0
+"Espinal Garcia, Hilario",MALE,3,3,P,2,2,2,0,1,1,1
+"Rivera, Francisca",FEMALE,4,4,M,2,2,1,0,1,1,1
+"Ulic, Nika",MALE,3,3,M,2,2,1,0,1,1,1
+"Pinto, Ann",FEMALE,4,5,P,2,3,1,0,1,1,1
+"Ragusa, Anna",FEMALE,3,2,M,2,2,1,0,1,1,1
+"Campbell, Mark",MALE,3,2,P,2,3,1,0,1,0,1
+"Attareb, Raid",MALE,1,1,P,2,2,1,0,1,0,1
+"Attareb, Raid",MALE,1,1,P,2,2,2,0,1,0,1
+"Masterson, Griffin",MALE,1,4,P,2,1,1,0,1,0,1
+"Gonzalez Mercedes, Nashai",FEMALE,2,4,P,2,2,1,0,0,0,1
+"Flores Sanchez, Omar",MALE,1,2,P,2,2,1,0,1,0,0
+"Flores Sanchez, Omar",MALE,1,2,P,2,2,2,0,1,0,1
+"Chimmel, Yisroel",MALE,2,2,P,2,2,1,0,1,1,1
+"Chimmel, Yisroel",MALE,2,2,P,2,2,2,1,1,1,1
+"Chimmel, Yisroel",MALE,2,2,P,2,2,3,1,1,1,1
+"Richard, Bernadette",FEMALE,3,4,M,2,2,1,0,1,1,0
+"Richard, Bernadette",FEMALE,3,4,M,2,4,2,0,1,1,1
+"Garcia, Apolinar ",MALE,3,2,M,2,3,1,0,1,1,0
+"Garcia, Apolinar ",MALE,3,2,M,2,4,2,0,1,1,0
+"Losecco, Judith",FEMALE,4,4,P,2,2,1,0,0,0,0
+"Losecco, Judith",FEMALE,4,4,P,2,2,2,1,0,0,1
+"Ahmed, Thikra",FEMALE,3,2,P,2,1,1,0,1,0,1
+"Ahmed, Thikra",FEMALE,3,2,P,2,2,2,0,1,0,1
+"Halary, Alhaji",MALE,3,2,P,2,2,1,0,1,0,1
+"Halary, Alhaji",MALE,3,2,P,2,3,2,0,1,0,1
+"Dooner, William",MALE,3,3,P,2,2,1,0,1,0,1
+"Walters, David",MALE,1,1,P,2,2,1,0,1,0,1
+"Lugo, Adriana",FEMALE,1,2,P,2,3,1,0,1,0,1
+"Diwan, Danish",MALE,2,1,P,2,1,1,0,1,0,1
+"Cofield, Benjamin",MALE,4,1,P,2,2,1,0,0,1,1
+"Zhang, Bo",FEMALE,2,2,P,2,3,1,0,0,0,1
+"Perretti, Andrew",MALE,3,2,M,2,1,1,0,1,1,1
+"Alberici, Carole",FEMALE,3,4,P,2,1,1,0,0,1,1
+"Rufor, Victor",MALE,4,4,M,1,2,1,0,1,0,1
+"Stearns, Patricia",FEMALE,4,4,M,1,1,1,0,1,1,1
+"Stearns, Patricia",FEMALE,4,4,M,1,1,2,0,1,1,1
+"Santiago, Javier",MALE,3,4,M,1,2,1,0,0,0,1
+"Rosa, Ramon",MALE,3,4,M,2,2,1,0,1,1,1
+"Rodriguez Zacarias, Alex",MALE,1,2,P,2,2,1,0,1,0,1
+"Lown, Samuel",MALE,1,3,P,2,3,1,0,1,0,1
+"Urena de Roa, Paola",FEMALE,2,2,P,2,3,1,0,0,0,1
+"Julmis, Denise",FEMALE,3,5,M,2,3,1,0,1,0,0
+"Julmis, Denise",FEMALE,3,4,M,2,3,2,1,1,0,0
+"Padilla Chavez, Juan",MALE,3,2,M,2,3,1,0,1,1,1
+"Colotti, Agostino",MALE,3,4,M,2,1,1,0,1,1,1
+"Dhuha, Sumaiyaa",FEMALE,1,2,P,2,2,1,0,1,1,1
+"Zaruma Camacho, Diego",MALE,2,2,P,2,2,1,0,1,0,1
+"Apolinar, Cornelio ",MALE,3,3,M,1,1,1,0,1,1,1
+"Zawaski, Larry",MALE,3,3,M,2,2,1,0,1,0,1
+"Peralta, Ana",FEMALE,3,3,P,2,2,1,0,1,0,1
+"Baez, Jimmy",MALE,3,3,P,1,2,1,0,1,0,1
+"Gomez, Almira",FEMALE,3,3,P,2,2,1,0,0,0,1
+"Lopez Calvo, Jorge",MALE,1,3,P,2,2,1,0,1,0,1
+"Marcos, Filogonio",MALE,3,3,M,2,1,1,0,1,1,1
+"Marrasquin, Elizabeth",FEMALE,1,2,P,2,2,1,0,1,0,0
+"Marrasquin, Elizabeth",FEMALE,1,2,P,2,2,2,1,1,0,0
+"Marrasquin, Elizabeth",FEMALE,1,2,P,2,2,3,1,1,0,1
+"Reid, Kenroy",MALE,1,3,P,2,2,1,0,1,0,1
+"Balde, Thierno",MALE,2,2,P,2,1,1,0,1,0,1
+"Cooke, Tameka",FEMALE,2,2,M,1,1,1,0,1,1,1
+"Cooke, Tameka",FEMALE,2,2,M,1,1,2,0,1,1,0
+"Cooke, Tameka",FEMALE,2,2,M,1,1,3,0,1,1,0
+"Cooke, Tameka",FEMALE,2,2,M,1,1,4,0,1,1,1
+"Rodriguez, Eliel",MALE,2,3,P,1,2,1,0,0,0,1
+"Whyte, Tonimarie",FEMALE,1,2,P,2,2,1,0,1,0,1
+"Whyte, Tonimarie",FEMALE,1,2,P,2,2,2,0,1,0,1
+"Simmons, Daishawn",MALE,1,2,P,2,3,1,0,1,0,1
+"Simmons, Daishawn",MALE,1,2,P,2,3,1,0,1,0,1
+"Lambert, Toni",FEMALE,2,2,P,2,2,2,0,0,0,1
+"Weingarten, Hymen",MALE,4,3,P,2,2,2,0,0,0,1
+"Laboriel, Olga",FEMALE,3,3,P,2,1,1,0,0,0,1
+"Henoch, Lerner",MALE,2,4,P,2,2,1,1,1,0,1
+"Tiru, Alexis",FEMALE,1,2,P,2,2,1,1,0,0,1
+"Tiru, Alexis",FEMALE,1,2,P,2,3,2,1,0,0,1
+"Tiru, Alexis",FEMALE,2,2,P,2,4,3,1,0,0,1
+"Porter, Sherry",FEMALE,3,4,P,2,1,1,1,1,1,1
+"Porter, Sherry",FEMALE,3,4,P,2,1,2,1,1,1,1
+"Malapoe, Raymond",MALE,3,3,P,2,1,1,0,0,0,1
+"Malapoe, Raymond",MALE,3,3,P,2,1,2,0,0,0,1
+"Wood, Christina",FEMALE,2,4,P,2,4,2,0,1,0,1
+"Wood, Christina",FEMALE,2,4,P,2,4,3,0,1,0,1
+"Wood, Christina",FEMALE,2,4,P,2,4,4,0,1,0,1
+"Wood, Christina",FEMALE,2,4,P,2,4,5,1,1,0,1
+"Ruiz, Xavier",MALE,1,2,P,1,2,1,0,1,0,1
+"Wilson, Jonathan",MALE,1,2,P,2,2,1,0,1,0,1
+"Semmens, Mary",FEMALE,3,2,P,2,4,1,0,0,0,1
+"Semmens, Mary",FEMALE,4,2,P,2,4,2,0,0,0,1
+"Morales, Elizabeth",FEMALE,2,4,P,1,3,1,0,0,0,1
+"Magneri, Grace",FEMALE,4,4,NO,2,2,1,0,0,0,1
+"Williams, Kaylia",FEMALE,1,3,P,2,2,1,0,1,0,1
+"Corporan, Eduard",MALE,2,2,P,2,2,1,0,1,0,1
+"Corporan, Eduard",MALE,2,2,P,2,2,2,0,1,0,1
+"Montes, Kassandra",FEMALE,2,2,P,2,1,1,0,1,0,1
+"Miller, Ena",FEMALE,4,3,P,2,1,1,1,0,0,1
+"Rodriguez, Altagracia",FEMALE,3,3,P,2,1,1,0,0,1,1
+"Frimpong, Fred",MALE,4,3,M,2,2,1,0,1,0,1
+"Ramos, Maria",FEMALE,4,4,M,2,1,1,0,1,1,1
+"Sampogna, Hayden",MALE,1,2,P,2,2,1,0,1,0,1
+"Sampogna, Hayden",MALE,1,2,P,2,2,2,0,1,0,1
+"Sampogna, Hayden",MALE,1,2,P,2,3,3,1,1,0,1
+"Polanco, Jose",MALE,4,4,NO,2,1,1,0,0,0,1
+"Polanco, Jose",MALE,4,4,NO,2,2,2,0,0,0,1
+"Rivera, Luisa",FEMALE,3,4,M,1,1,1,0,1,1,1
+"Demaj, Betim",MALE,1,3,P,1,1,1,0,1,1,0
+"Demaj, Betim",MALE,1,3,P,1,1,2,0,1,1,1
+"Demaj, Betim",MALE,1,3,P,1,1,3,0,1,1,1
+"Lopez, Julius",MALE,1,2,P,2,2,1,0,1,0,1
+Sonia Sotomayor,FEMALE,3,3,NO,2,1,1,0,0,0,1
+Sonia Sotomayor,FEMALE,3,3,P,2,2,1,0,0,0,1
+Rosa R Romero,FEMALE,3,4,NO,2,1,1,0,0,0,1
+"Lamar, Tony",MALE,3,2,NO,2,2,1,0,0,0,1
+"Lamar, Tony",MALE,3,2,NO,2,2,1,0,0,0,1
+David Frankel,MALE,3,3,P,2,3,1,0,1,0,1
+David Frankel,MALE,3,3,P,2,3,2,0,1,0,1
+"Murdock, Vernilda",FEMALE,4,2,M,1,1,1,0,1,1,1
