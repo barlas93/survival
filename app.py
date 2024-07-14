@@ -1,11 +1,7 @@
-from flask import Flask, render_template, request
-import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
-
-app = Flask(__name__)
 
 data = pd.read_csv('survival.csv')
 
