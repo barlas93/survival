@@ -1,14 +1,10 @@
-from flask import Flask, render_template, request
-import pickle
+import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
-
-app = Flask(__name__)
+from imblearn.over_sampling import RandomOverSampler
 
 data = pd.read_csv('survival.csv')
-
 data = data.drop(columns=['Name'])
 data = data.dropna()
 
@@ -17,63 +13,99 @@ data['Sex'] = label_encoder.fit_transform(data['Sex'])
 data['Diagnosis'] = label_encoder.fit_transform(data['Diagnosis'])
 
 X = data[['Age', 'Sex', 'BMI', 'Diagnosis', 'Location', 'Resection', 'Infection', 'CT', 'RT', 'Revision']]
-y = data['SURV1']
+y = data['SURV2']
 
-# Random Oversampling
-oversample = RandomOverSampler(sampling_strategy='minority')
+oversample = RandomOverSampler(sampling_strategy='minority', random_state=42)
 X_resampled, y_resampled = oversample.fit_resample(X, y)
-
 
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)  
 rf_model.fit(X_resampled, y_resampled)
 
-# Load label encoders
-label_encoder_sex = LabelEncoder()
-label_encoder_diagnosis = LabelEncoder()
-
-# Home page route
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-# Prediction route
-@app.route('/predict', methods=['POST'])
-def predict():
-    # Get user input from form
-    age = request.form['age']
-    sex = request.form['sex']
-    bmi = request.form['bmi']
-    diagnosis = request.form['diagnosis']
-    location = request.form['location']
-    resection = request.form['resection']
-    infection = request.form['infection']
-    ct = request.form['ct']
-    rt = request.form['rt']
-    revision = request.form['revision']
+def main():
+    st.markdown("<h1 style='text-align: center;'>Megaprosthesis Survival Prediction 24 months</h1>", unsafe_allow_html=True)
     
-    # Create input DataFrame
+    st.sidebar.header('Input Features')
+
+    age_options = ['<18', '18-40', '41-65', '>65']
+    age = st.sidebar.selectbox('Age', age_options)
+
+    bmi_options = ['<18.5', '18.5-24.9', '25-29.9', '30-39.9', '>40']
+    bmi = st.sidebar.selectbox('BMI', bmi_options)
+
+    sex_options = ['Male', 'Female']
+    sex = st.sidebar.selectbox('Gender', sex_options)
+
+    diagnosis_options = ['Primary', 'Metastatic']
+    diagnosis = st.sidebar.selectbox('Diagnosis', diagnosis_options)
+
+    location_options = ['Upper Extremity', 'Lower Extremity']
+    location = st.sidebar.selectbox('Location', location_options)
+
+    resection_options = ['<120', '121-199', '200-299', '>300']
+    resection = st.sidebar.selectbox('Resection (mm)', resection_options)
+
+    revision_options = ['1', '2', '3', '>3']
+    revision = st.sidebar.selectbox('Number of surgeries', revision_options)
+
+    infection_options = ['Yes', 'No']
+    infection = st.sidebar.selectbox('History of infection', infection_options)
+
+    ct_options = ['Yes', 'No']
+    ct = st.sidebar.selectbox('Chemotherapy', ct_options)
+
+    rt_options = ['Yes', 'No']
+    rt = st.sidebar.selectbox('Radiation therapy', rt_options)
+
+    age_mapping = {'<18': 1, '18-40': 2, '41-65': 3, '>65': 4}
+    bmi_mapping = {'<18.5': 1, '18.5-24.9': 2, '25-29.9': 3, '30-39.9': 4, '>40': 5}
+    sex_mapping = {'Male': 1, 'Female': 0}
+    diagnosis_mapping = {'Primary': 1, 'Metastatic': 0}
+    location_mapping = {'Upper Extremity': 1, 'Lower Extremity': 2}
+    resection_mapping = {'<120': 1, '121-199': 2, '200-299': 3, '>300': 4}
+    revision_mapping = {'1': 1, '2': 2, '3': 3, '>3': 4}
+    infection_mapping = {'Yes': 1, 'No': 0}
+    ct_mapping = {'Yes': 1, 'No': 0}
+    rt_mapping = {'Yes': 1, 'No': 0}
+
     input_data = pd.DataFrame({
-        'Age': [age],
-        'Sex': [sex],
-        'BMI': [bmi],
-        'Diagnosis': [diagnosis],
-        'Location': [location],
-        'Resection': [resection],
-        'Infection': [infection],
-        'CT': [ct],
-        'RT': [rt],
-        'Revision': [revision]
+        'Age': [age_mapping[age]],
+        'Sex': [sex_mapping[sex]],
+        'BMI': [bmi_mapping[bmi]],
+        'Diagnosis': [diagnosis_mapping[diagnosis]],
+        'Location': [location_mapping[location]],
+        'Resection': [resection_mapping[resection]],
+        'Infection': [infection_mapping[infection]],
+        'CT': [ct_mapping[ct]],
+        'RT': [rt_mapping[rt]],
+        'Revision': [revision_mapping[revision]]
     })
 
-    # Make prediction
     y_pred = rf_model.predict(input_data)
     y_proba = rf_model.predict_proba(input_data)[:, 1]
 
-     # Map predicted values to labels
-    labels = {0: "Failure", 1: "Survival"}
-    y_pred_labels = [labels[pred] for pred in y_pred]
+    labels = {0: "failure", 1: "survival"}
+    prediction_label = labels[y_pred[0]]
 
-    return render_template('result.html', prediction=y_pred_labels[0], probability=y_proba[0])
+    prob_html = f"""
+    <div style="text-align: center; margin-top: 20px;">
+            <span style="font-size: 28px">Probability of survival: {y_proba[0]}</span>
+    </div>
+    """
+    st.markdown(prob_html, unsafe_allow_html=True)
+    
+    if y_pred == 0:
+        result_html = f"""
+        <div style="text-align: center;">
+            <span style="font-size: 28px">The predicted outcome is </span><span style="font-size: 28px; color: red;">{prediction_label}</span>
+        </div>
+        """
+    else:
+        result_html = f"""
+        <div style="text-align: center;">
+            <span style="font-size: 28px">The predicted outcome is </span><span style="font-size: 28px; color: green;">{prediction_label}</span>
+        </div>
+        """
 
+    st.markdown(result_html, unsafe_allow_html=True)
 if __name__ == '__main__':
-    app.run(debug=True)
+    main()
