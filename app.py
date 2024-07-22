@@ -35,7 +35,7 @@ def main():
     sex_options = ['Male', 'Female']
     sex = st.sidebar.selectbox('Gender', sex_options)
 
-    diagnosis_options = ['Primary', 'Metastatic']
+    diagnosis_options = ['Primary', 'Metastatic', 'Non-Oncologic']
     diagnosis = st.sidebar.selectbox('Diagnosis', diagnosis_options)
 
     location_options = ['Upper Extremity', 'Lower Extremity']
@@ -59,7 +59,7 @@ def main():
     age_mapping = {'<18': 1, '18-40': 2, '41-65': 3, '>65': 4}
     bmi_mapping = {'<18.5': 1, '18.5-24.9': 2, '25-29.9': 3, '30-39.9': 4, '>40': 5}
     sex_mapping = {'Male': 1, 'Female': 0}
-    diagnosis_mapping = {'Primary': 1, 'Metastatic': 0}
+    diagnosis_mapping = {'Non-Oncologic':2, 'Primary': 1, 'Metastatic': 0}
     location_mapping = {'Upper Extremity': 1, 'Lower Extremity': 2}
     resection_mapping = {'<120': 1, '121-199': 2, '200-299': 3, '>300': 4}
     revision_mapping = {'1': 1, '2': 2, '3': 3, '>3': 4}
