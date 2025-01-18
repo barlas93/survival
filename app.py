@@ -22,7 +22,7 @@ rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 rf_model.fit(X_resampled, y_resampled)
 
 def main():
-    st.markdown("<h1 style='text-align: center;'>Megaprosthesis Survival Prediction 12 months</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Megaprosthesis Survival Prediction 24 months</h1>", unsafe_allow_html=True)
     
     st.sidebar.header('Input Features')
 
